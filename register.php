@@ -6,13 +6,13 @@ require('views/header.html');
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    require('mysqli_connect.php'); // Connect to the db.
+    require('/mysql_connect.php'); // Connect to the db.
 
     $errors = []; // Initialize an error array.
 
     // Check for a first name:
     if (empty($_POST['user_name'])) {
-        $errors[] = 'Missing first name';
+        $errors[] = 'Missing user name';
     } else {
         $un = mysqli_real_escape_string($dbc, trim($_POST['user_name']));
     }
@@ -69,12 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="main">
         <h1>Register</h1>
 
-        <form action="register.php" method="post">
+        <form action="/register.php" method="post">
 
             <div class="form-row">
                 <div class="col-sm-6 mb-3">
                     <label for="validationDefault02">User name</label>
-                    <input type="text" name="last_name" class="form-control" id="validationDefault02" placeholder="Last name" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>">
+                    <input type="text" name="user_name" class="form-control" id="validationDefault02" placeholder="User Name" value="<?php if (isset($_POST['user_name'])) echo $_POST['user_name']; ?>">
                 </div>
             </div>
 
@@ -100,4 +100,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 
-<?php require('views/footer.html'); ?>
+<?php include('views/footer.html'); ?>

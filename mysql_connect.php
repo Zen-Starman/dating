@@ -5,7 +5,7 @@
 #   File:   mysql_connect.php
 
 define('DB_USER', 'ztsgreen_phpscript');
-define('DB_PASSWORD', 'kku;I3*k@}v{');
+define('DB_PASSWORD', '123!@#hello');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'ztsgreen_sitename');
 

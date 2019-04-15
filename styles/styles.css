@@ -43,6 +43,8 @@ footer{
     bottom: 0;
     position: fixed;
     width: 100%;
+    text-shadow: 0 0 5px darkgoldenrod;
+
 }
 #greeting{
     background: goldenrod;

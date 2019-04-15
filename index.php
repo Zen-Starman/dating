@@ -1,15 +1,14 @@
 <?php
 
 /**
- *  Another test project
+ *  Dating Site Assignment
  *  Author: Zane Stearman
- *  Date:   04/10/2019
- *  File:   index.php
+ *  Date:   04/14/2019
  */
 
 //Turn on error reporting
 ini_set('display_errors', 1);
-error_reporting(E_ALL); //sets level to everything
+error_reporting(E_ALL);
 
 //Require autoload file
 require_once('vendor/autoload.php');
@@ -21,10 +20,8 @@ $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 
 //define a default route
-//you can do GET /home/main/hello/
 $f3->route('GET /', function(){
-//    echo '<h1>Hola!</h1>';
-    //display a view
+
     $view = new Template();
     echo $view->render('views/home.html');
 });

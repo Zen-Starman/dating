@@ -24,23 +24,28 @@
 
 <div class="container" id="columns">
     <div class="row" id="greeting">
-        <div class="col-sm-8">
-            <div class="col">Name: {{ $_SESSION['f_name'] }}</div>
-            <div class="col">Gender: {{ @SESSION.gender }}</div>
-            <div class="col">Age: {{ @SESSION.age }}</div>
-            <div class="col">Phone: {{ @SESSION.phone }}</div>
-            <div class="col">Email: {{ @SESSION.email }}</div>
-            <div class="col">State:{{ @SESSION.state }}</div>
-            <div class="col">Seeking: {{ @SESSION.seeking }}</div>
-            <div class="col">Interests:{{ @SESSION.interests }}</div>
+        <div class="col-sm-14">
+            <div class="col-sm-16">Name: {{ $_SESSION['f_name'] }} {{ @SESSION['l_name'] }}</div>
+            <div class="col-sm-16">Gender: {{ @SESSION.gender }}</div>
+            <div class="col-sm-16">Age: {{ @SESSION.age }}</div>
+            <div class="col-sm-16">Phone: {{ @SESSION.phone }}</div>
+            <div class="col-sm-16">Email: {{ @SESSION.email }}</div>
+            <div class="col-sm-16">State:{{ @SESSION.state }}</div>
+            <div class="col-sm-16">Seeking: {{ @SESSION.seeking }}</div>
+            <div class="col-sm-16">Interests:
+                <repeat group="{{ @SESSION.interests }}" value="{{ @SESSION.interests }}">
+                    {{ @SESSION.interests }},
+                </repeat>
+                {{ @SESSION.interests }}
+            </div>
         </div>
     </div>
 <!--second row-->
     <div class="row">
-        <div class="col-sm-4" id="profpic">
-            <img src="https://www.mercurynews.com/wp-content/uploads/2018/01/thinkstockphotos-640140946.jpg?w=525" alt="handsome cat">
+        <div class="col-sm-14" id="profpic">
+            <img width="40vw" src="https://www.mercurynews.com/wp-content/uploads/2018/01/thinkstockphotos-640140946.jpg?w=525" alt="handsome cat">
         </div>
-        <div class="col-sm-4" >
+        <div class="col-sm-14" >
             <h3>Biography:</h3>
             {{ @SESSION.bio }}
         </div>
@@ -51,9 +56,9 @@
     </div>
 </div>
 
-<footer>
-    <h4 class="text-muted"><p>Date-Night &copy; 2019</h4>
-    <p>by: Zane Stearman</p><br>
-</footer>
+<!--<footer>-->
+<!--    <h4 class="text-muted"><p>Date-Night &copy; 2019</h4>-->
+<!--    <p>by: Zane Stearman</p><br>-->
+<!--</footer>-->
 </body>
 </html>

@@ -58,7 +58,6 @@ $f3->route('POST /interests', function(){
     $_SESSION['bio'] = $_POST['bio'];
 
 
-
     $view = new Template();
     echo $view->render('views/interests.html');
 });
@@ -67,7 +66,6 @@ $f3->route('POST /Summary', function(){
 
     $_SESSION['interests'] = $_POST['interests'];
     $view = new Template();
-//    print_r($_POST);
     echo $view->render('views/summary.html');
 });
 

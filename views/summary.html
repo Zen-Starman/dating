@@ -22,10 +22,10 @@
     <h2> -Profile Summary-</h2>
 </div>
 
-<div class="container">
+<div class="container" id="columns">
     <div class="row" id="greeting">
-        <div class="col-sm-5">
-            <div class="col">Name: {{ @SESSION.f_name }}</div>
+        <div class="col-sm-8">
+            <div class="col">Name: {{ $_SESSION['f_name'] }}</div>
             <div class="col">Gender: {{ @SESSION.gender }}</div>
             <div class="col">Age: {{ @SESSION.age }}</div>
             <div class="col">Phone: {{ @SESSION.phone }}</div>
@@ -37,15 +37,15 @@
     </div>
 <!--second row-->
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4" id="profpic">
             <img src="https://www.mercurynews.com/wp-content/uploads/2018/01/thinkstockphotos-640140946.jpg?w=525" alt="handsome cat">
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4" >
             <h3>Biography:</h3>
             {{ @SESSION.bio }}
         </div>
     </div>
-    <div class="contact">
+    <div class="contact" >
         <a href="contact"><button href="contact" type="submit" id="button-style" class="btn btn-primary btn-lg" value="Join the fun!">
             Contact Me</button></a>
     </div>

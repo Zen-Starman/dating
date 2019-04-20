@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personal Information</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../styles/styles.css">
+
+</head>
+<body>
+
+<div class="jumbotron text-center datenight">
+    <!--    <div class=" overlay-mf">-->
+    <h1>=^o.o^=Date-Night~~</h1>
+    <h2> -Personal Information-</h2>
+    <!--    </div>-->
+</div>
+
+<div class="container" id="columns">
+    <div id="greeting">
+    <div action="profile" method="post" role="form">
+        <form action="profile" method="post" >
+        <div>Personal Information!</div>
+        <div id="errormessage"></div>
+        <div class="col-sm-12 mb-3">
+            <div class="form-group">
+                <input type="text" name="f_name" class="form-control" id="f_name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+            </div>
+        </div>
+        <div class="col-sm-12 mb-3">
+            <div class="form-group">
+                <input type="text" name="l_name" class="form-control" id="l_name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 mb-3">
+            <div class="form-group">
+                <input type="number" name="age" class="form-control" id="age" placeholder="20" data-rule="minlen:4" data-msg="Please enter your age." />
+                <div class="validation"></div>
+            </div>
+        </div>
+        <div class="col-sm-12 mb-3">
+            <h3>Gender</h3>
+            <br>
+            <div class="input-group">
+                <label>
+                    <input type="radio" aria-label="Radio button for following text input"> male</label>
+                <label>
+                    <input type="radio" aria-label="Radio button for following text input"> female</label>
+            </div>
+        </div>
+            <div class="col-sm-12 mb-3">
+                <div class="form-group">
+                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="(xxx) xxx-xxxx" data-rule="minlen:4" data-msg="Please enter a 10 digit number" />
+                    <div class="validation"></div>
+                </div>
+            </div>
+
+    </div>
+    </div>
+
+    <div class="right">
+        <div  id="greeting" class="col-sm-6 mb-6">
+            <div class="title-box-2 pt-4 pt-md-0">
+                <h5>
+                    Privacy Policy
+                </h5>
+            </div>
+            <p class="lead">
+                All of your information is confidential. Please see our <a>Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+    <a href="profile"><button href="profile" type="submit" id="button-style" class="btn btn-primary btn-md">Next></button></a>
+
+    </form>
+</div>
+
+</body>
+</html>

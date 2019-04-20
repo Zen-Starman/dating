@@ -9,8 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../styles/styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Profile Start</title>
 </head>
 <body>
 
@@ -100,12 +100,12 @@
             <div class="col-sm-3">
                 <h3>Seeking</h3>
                 <br>
-                <div class="input-group">
+                <div class="input-group" name="seeking">
 
                     <label>
-                        <input type="radio" aria-label="Radio button for following text input"> male</label>
+                        <input name="seeking" value="male" type="radio" aria-label="Radio button for following text input"> male</label>
                     <label>
-                        <input type="radio" aria-label="Radio button for following text input"> female</label>
+                        <input name="seeking" value="female" type="radio" aria-label="Radio button for following text input"> female</label>
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
             <div class="col-sm-12 mb-3">
                 <div class="form-group">
                     <label for="bio"><h3>Biography</h3></label>
-                        <textarea id="bio" class="form-control" name="Biography" rows="12" cols="50" data-rule="required" data-msg="Please tell us a little about yourself" placeholder="Hi I am..."></textarea>
+                        <textarea id="bio" class="form-control" name="bio" rows="12" cols="50" data-rule="required" data-msg="Please tell us a little about yourself" placeholder="Hi I am..."></textarea>
                     <div class="validation"></div>
                 </div>
             </div>

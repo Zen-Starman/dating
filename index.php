@@ -1,10 +1,12 @@
 <?php
 
 /**
- *  Dating Site Assignment
+ *  Dating Site Assignment part2
  *  Author: Zane Stearman
- *  Date:   04/14/2019
+ *  Date:   04/18/2019
  */
+
+session_start();
 
 //Turn on error reporting
 ini_set('display_errors', 1);
@@ -24,6 +26,27 @@ $f3->route('GET /', function(){
 
     $view = new Template();
     echo $view->render('views/home.html');
+});
+
+//define profile paths
+$f3->route('POST /personal_info', function(){
+    $view = new Template();
+    echo $view->render('views/prsnInfo.html');
+});
+
+$f3->route('POST /Profile', function(){
+    $view = new Template();
+    echo $view->render('views/profile.html');
+});
+
+$f3->route('POST /interests', function(){
+    $view = new Template();
+    echo $view->render('views/interests.html');
+});
+
+$f3->route('POST /Profile_Summary', function(){
+    $view = new Template();
+    echo $view->render('../views/summary.html');
 });
 
 //Run Fat-free

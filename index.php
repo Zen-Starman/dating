@@ -30,22 +30,44 @@ $f3->route('GET /', function(){
 
 //define profile paths
 $f3->route('GET /personal_info', function(){
+
     $view = new Template();
     echo $view->render('views/prsnInfo.html');
 });
 
 $f3->route('POST /Profile', function(){
+
+
+
+    $_SESSION['f_name'] = $_POST['f_name'];
+    $_SESSION['l_name'] = $_POST['l_name'];
+    $_SESSION['age'] = $_POST['age'];
+    $_SESSION['gender'] = $_POST['gender'];
+    $_SESSION['phone'] = $_POST['phone'];
+
     $view = new Template();
     echo $view->render('views/profile.html');
 });
 
 $f3->route('POST /interests', function(){
+
+
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['state'] = $_POST['state'];
+    $_SESSION['seeking'] = $_POST['seeking'];
+    $_SESSION['bio'] = $_POST['bio'];
+
+
+
     $view = new Template();
     echo $view->render('views/interests.html');
 });
 
 $f3->route('POST /Summary', function(){
+
+    $_SESSION['interests'] = $_POST['interests'];
     $view = new Template();
+//    print_r($_POST);
     echo $view->render('views/summary.html');
 });
 

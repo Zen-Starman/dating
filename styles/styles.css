@@ -27,8 +27,9 @@ body{
     border-radius: 5px;
 }
 .container{
-    width: 80vw;
-    height: 60vh;
+    width: 90vw;
+    height: 65vh;
+    margin-top:30px;
 }
 img{
     margin: 1em;
@@ -46,10 +47,33 @@ footer{
     text-shadow: 0 0 5px darkgoldenrod;
 
 }
-#greeting{
+#greeting {
+    width: 40vw;
     background: goldenrod;
     opacity: .9;
     padding: 1em;
     border-radius: 5px;
-
+    border: 1px solid gray;
+    float: left;
+}
+#columns{
+    background: goldenrod;
+    opacity: .9;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+button{
+    float: right;
+    clear: both;
+}
+textarea{
+    padding: 5%;
+    float: right;
 }

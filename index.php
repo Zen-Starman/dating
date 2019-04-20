@@ -29,7 +29,7 @@ $f3->route('GET /', function(){
 });
 
 //define profile paths
-$f3->route('POST /personal_info', function(){
+$f3->route('GET /personal_info', function(){
     $view = new Template();
     echo $view->render('views/prsnInfo.html');
 });
@@ -44,9 +44,9 @@ $f3->route('POST /interests', function(){
     echo $view->render('views/interests.html');
 });
 
-$f3->route('POST /Profile_Summary', function(){
+$f3->route('POST /Summary', function(){
     $view = new Template();
-    echo $view->render('../views/summary.html');
+    echo $view->render('views/summary.html');
 });
 
 //Run Fat-free

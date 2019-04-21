@@ -24,7 +24,7 @@
 
 <div class="container" id="columns">
     <div class="row" id="greeting">
-        <div class="col-sm-14">
+        <div class="col-sm-16">
             <div class="col-sm-16">Name: {{ $_SESSION['f_name'] }} {{ @SESSION['l_name'] }}</div>
             <div class="col-sm-16">Gender: {{ @SESSION.gender }}</div>
             <div class="col-sm-16">Age: {{ @SESSION.age }}</div>
@@ -33,19 +33,19 @@
             <div class="col-sm-16">State:{{ @SESSION.state }}</div>
             <div class="col-sm-16">Seeking: {{ @SESSION.seeking }}</div>
             <div class="col-sm-16">Interests:
-                <repeat group="{{ @SESSION.interests }}" value="{{ @SESSION.interests }}">
-                    {{ @SESSION.interests }},
+
+                <repeat group="{{ $_SESSION['interests'] }}" value=" {{ $_SESSION['interests'] }} ">
+                    {{ $_SESSION['interests'] }},
                 </repeat>
-                {{ @SESSION.interests }}
             </div>
         </div>
     </div>
 <!--second row-->
     <div class="row">
-        <div class="col-sm-14" id="profpic">
-            <img width="40vw" src="https://www.mercurynews.com/wp-content/uploads/2018/01/thinkstockphotos-640140946.jpg?w=525" alt="handsome cat">
+        <div class="col-sm-16" id="profpic">
+            <img src="https://www.mercurynews.com/wp-content/uploads/2018/01/thinkstockphotos-640140946.jpg?w=525" alt="handsome cat">
         </div>
-        <div class="col-sm-14" >
+        <div class="col-sm-16" >
             <h3>Biography:</h3>
             {{ @SESSION.bio }}
         </div>

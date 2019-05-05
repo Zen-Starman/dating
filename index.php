@@ -35,36 +35,49 @@ $f3->route('GET /personal_info', function(){
     echo $view->render('views/prsnInfo.html');
 });
 
-$f3->route('POST /Profile', function(){
+$f3->route('POST /Profile', function($f3){
 
 
 
-    $_SESSION['f_name'] = $_POST['f_name'];
-    $_SESSION['l_name'] = $_POST['l_name'];
-    $_SESSION['age'] = $_POST['age'];
-    $_SESSION['gender'] = $_POST['gender'];
-    $_SESSION['phone'] = $_POST['phone'];
+    $f_name= $_POST['f_name'];
+    $l_name= $_POST['l_name'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+    $phone = $_POST['phone'];
+
+    $f3->set('f_name', $f_name);
+    $f3->set('l_name', $l_name);
+    $f3->set('age', $age);
+    $f3->set('gender', $gender);
+    $f3->set('phone', $phone);
 
     $view = new Template();
     echo $view->render('views/profile.html');
 });
 
-$f3->route('POST /interests', function(){
+$f3->route('POST /interests', function($f3){
 
 
-    $_SESSION['email'] = $_POST['email'];
-    $_SESSION['state'] = $_POST['state'];
-    $_SESSION['seeking'] = $_POST['seeking'];
-    $_SESSION['bio'] = $_POST['bio'];
+    $email = $_POST['email'];
+    $state = $_POST['state'];
+    $seeking = $_POST['seeking'];
+    $bio = $_POST['bio'];
 
+    $f3->set('email', $email);
+    $f3->set('state', $state);
+    $f3->set('seeking', $seeking);
+    $f3->set('bio', $bio);
 
     $view = new Template();
     echo $view->render('views/interests.html');
 });
 
-$f3->route('POST /Summary', function(){
+$f3->route('POST /Summary', function($f3){
 
-    $_SESSION['interests'] = $_POST['interests'];
+    $interests = $_POST['interests'];
+
+    $f3->set('interests', $interests);
+
     $view = new Template();
     echo $view->render('views/summary.html');
 });

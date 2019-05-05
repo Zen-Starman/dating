@@ -26,38 +26,41 @@
         <form action="profile" method="post" >
         <div>Personal Information!</div>
         <div id="errormessage"></div>
-        <div class="col-sm-12 mb-3">
+<!--First Name-->
+            <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="text" name="f_name" class="form-control" id="f_name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" value="{{ @f_name }}" name="f_name" class="form-control" id="f_name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
             </div>
         </div>
-        <div class="col-sm-12 mb-3">
+<!--Last Name-->
+            <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="text" name="l_name" class="form-control" id="l_name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" value="{{ @l_name }}" name="l_name" class="form-control" id="l_name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
             </div>
         </div>
-
+<!--Age-->
         <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="number" name="age" class="form-control" id="age" placeholder="20" data-rule="minlen:4" data-msg="Please enter your age." />
+                <input type="number" value="{{ @age }}" name="age" class="form-control" id="age" placeholder="20" data-rule="minlen:4" data-msg="Please enter your age." />
                 <div class="validation"></div>
             </div>
         </div>
+<!--Gender-->
         <div class="col-sm-12 mb-3">
             <h3>Gender</h3>
             <br>
             <div class="input-group">
                 <label>
-                    <input name="gender" type="radio" value="male" aria-label="Radio button for following text input"> male</label>
+                    <input name="gender" value="{{ @gender }}" type="radio" value="male" aria-label="Radio button for following text input"> male</label>
                 <label>
-                    <input name="gender" type="radio" value="female" aria-label="Radio button for following text input"> female</label>
+                    <input name="gender" value="{{ @gender }}" type="radio" value="female" aria-label="Radio button for following text input"> female</label>
             </div>
         </div>
             <div class="col-sm-12 mb-3">
                 <div class="form-group">
-                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="(xxx) xxx-xxxx" data-rule="minlen:4" data-msg="Please enter a 10 digit number" />
+                    <input type="tel" value="{{ @phone }}" class="form-control" name="phone" id="phone" placeholder="(xxx) xxx-xxxx" data-rule="minlen:4" data-msg="Please enter a 10 digit number" />
                     <div class="validation"></div>
                 </div>
             </div>

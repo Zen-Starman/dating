@@ -14,6 +14,8 @@ error_reporting(E_ALL);
 
 //Require autoload file
 require_once('vendor/autoload.php');
+require_once('model/validate.php');
+
 
 //Create an instance of the Base class
 $f3 = Base::instance();
@@ -35,7 +37,7 @@ $f3->route('GET /personal_info', function(){
     echo $view->render('views/prsnInfo.html');
 });
 
-$f3->route('POST /Profile', function($f3){
+$f3->route('POST|GET /Profile', function($f3){
 
 
 

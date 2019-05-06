@@ -14,7 +14,7 @@ error_reporting(E_ALL);
 
 //Require autoload file
 require_once('vendor/autoload.php');
-require_once('model/validate.php');
+require_once('model/validate-functions.php');
 
 
 //Create an instance of the Base class

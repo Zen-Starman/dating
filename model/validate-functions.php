@@ -6,11 +6,46 @@
  * @file:        validate-functions.php
  * @date:        05/05/2019
  */
+/* Validate the form
+ * @return boolean
+ */
+function validForm()
+{
+    global $f3;
+    $isValid = true;
+
+    if (!validName(($f3->get('f_name')), ($f3->get('l_name')))) {
+
+        $isValid = false;
+
+        $f3->set("errors['f_name']"."errors['l_name']", "Please enter your first name.");
+//        $f3->set("errors['l_name']", "Please enter your last name.");
+    }
+
+    if (!validAge($f3->get('age'))) {
+
+        $isValid = false;
+        $f3->set("errors['age']", "Please enter your age.");
+    }
+
+    if (!validPhone($f3->get('phone'))) {
+
+        $isValid = false;
+        $f3->set("errors['phone']", "Please enter valid phone number.");
+    }
+
+    if (!validEmail($f3->get('email'))) {
+
+        $isValid = false;
+        $f3->set("errors['email']", "Please select email.");
+    }
+
+    return $isValid;
+}
 
 
-
-function validName($name){
-    return !empty($name) && ctype_alpha($name);
+function validName($f_name, $l_name){
+    return (!empty($f_name) && ctype_alpha($f_name)) && (!empty($l_name) && ctype_alpha($l_name));
 }
 
 function validAge($age){

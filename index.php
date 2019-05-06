@@ -39,7 +39,11 @@ $f3->route('GET /personal_info', function(){
 
 $f3->route('POST|GET /Profile', function($f3){
 
-
+    $_SESSION['f_name'] = $_POST['f_name'];
+    $_SESSION['l_name'] = $_POST['l_name'];
+    $_SESSION['age'] = $_POST['age'];
+    $_SESSION['gender'] = $_POST['gender'];
+    $_SESSION['phone'] = $_POST['phone'];
 
     $f_name= $_POST['f_name'];
     $l_name= $_POST['l_name'];
@@ -59,6 +63,10 @@ $f3->route('POST|GET /Profile', function($f3){
 
 $f3->route('POST /interests', function($f3){
 
+//    $_SESSION['email'] = $_POST['email'];
+//    $_SESSION['state'] = $_POST['state'];
+//    $_SESSION['seeking'] = $_POST['seeking'];
+//    $_SESSION['bio'] = $_POST['bio'];
 
     $email = $_POST['email'];
     $state = $_POST['state'];

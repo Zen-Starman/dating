@@ -5,9 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
 
 </head>
@@ -27,23 +24,33 @@
         <div>Personal Information!</div>
         <div id="errormessage"></div>
 <!--First Name-->
-            <div class="col-sm-12 mb-3">
+         <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="text" value="{{ @f_name }}" name="f_name" class="form-control" id="f_name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" value="{{ @f_name }}"
+                <check if="{{ @errors['food'] }}">
+                    <span class="err">{{ @errors['f_name'] }}</span>
+                </check>
+                name="f_name" class="form-control" id="f_name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
             </div>
         </div>
 <!--Last Name-->
-            <div class="col-sm-12 mb-3">
+         <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="text" value="{{ @l_name }}" name="l_name" class="form-control" id="l_name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" value="{{ @l_name }}"
+                <check if="{{ @errors['food'] }}">
+                    <span class="err">{{ @errors['l_name'] }}</span>
+                </check>
+                name="l_name" class="form-control" id="l_name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
             </div>
         </div>
 <!--Age-->
         <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="number" value="{{ @age }}" name="age" class="form-control" id="age" placeholder="20" data-rule="minlen:4" data-msg="Please enter your age." />
+                <input type="number" value="{{ @age }}"  <check if="{{ @errors['food'] }}">
+                <span class="err">{{ @errors['age'] }}</span>
+            </check> name="age" class="form-control" id="age" placeholder="20" data-rule="minlen:4" data-msg="Please enter your age." />
                 <div class="validation"></div>
             </div>
         </div>
@@ -53,9 +60,17 @@
             <br>
             <div class="input-group">
                 <label>
-                    <input name="gender" value="{{ @gender }}" type="radio" value="male" aria-label="Radio button for following text input"> male</label>
+                    <input name="gender" value="{{ @gender }}"
+                    <check if="{{ @errors['food'] }}">
+                        <span class="err">{{ @errors['gender'] }}</span>
+                    </check>
+                    type="radio" value="male" aria-label="Radio button for following text input"> male</label>
                 <label>
-                    <input name="gender" value="{{ @gender }}" type="radio" value="female" aria-label="Radio button for following text input"> female</label>
+                    <input name="gender" value="{{ @gender }}"
+                    <check if="{{ @errors['food'] }}">
+                        <span class="err">{{ @errors['food'] }}</span>
+                    </check>
+                    type="radio" value="female" aria-label="Radio button for following text input"> female</label>
             </div>
         </div>
             <div class="col-sm-12 mb-3">
@@ -84,6 +99,12 @@
 
     </form>
 </div>
+
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</footer>
 
 </body>
 </html>

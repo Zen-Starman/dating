@@ -22,18 +22,21 @@
 
 <div class="container" id="columns" name="interests">
     <!--first row-->
-    <form method="post" action="summary">
+    <form method="post" action="#">
 
     <h2>Indoor Interest</h2>
     <div class="row">
+        <!-- Create checkboxes for Indoor interests -->
+        <repeat group="{{ @indoor }} " value="{{ @interests }}">
         <div class="col-sm-3">
             <div class="input-group mb-3">
                 <label>
-                <input name="interests[]" value="Food" type="checkbox" aria-label="Checkbox for following text input">
-                    Food
+                <input name="indoor[]" value="{{ @interests }}" type="checkbox" aria-label="Checkbox for following text input">
+                    {{ @interests }}
                 </label>
             </div>
         </div>
+        </repeat>
         <div class="col-sm-3">
             <div class="input-group mb-3">
                 <label>

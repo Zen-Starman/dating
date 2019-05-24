@@ -19,7 +19,6 @@
 </div>
 
 <div class="container" id="columns">
-<div action="interests" method="post" role="form">
     <form action="#" method="post" >
     <div id="greeting">
         <!--first row-->
@@ -40,15 +39,16 @@
                 <div class="form-group">
                     <h3>State</h3>
 
-                    <select name="state" class="custom-select" id="inputGroupSelect01">
-                        <!--                <select >-->
-                        <check if="{{ @errors['states'] }}">
-                            <span class="err">{{ @errors['@states'] }}</span>
-                        </check>
+                    <check if="{{ @errors['states'] }}">
+                        <span class="err">{{ @errors['@states'] }}</span>
+                    </check>
+                    <select name="states" class="custom-select" id="states">
 
                         <repeat group="{{ @states }}" value="{{ @stateOption }}">
 
-                            <option <check if="@state == @stateOption">selected</check> name="states" value="{{ @stateOption }}">
+                            <option
+                                <check if="@states == @stateOption">selected</check>
+                                name="states" value="{{ @stateOption }}" >
                                 {{ @stateOption }}
                             </option>
                         </repeat>
@@ -62,13 +62,25 @@
             <div class="col-sm-3">
                 <h3>Seeking</h3>
                 <br>
-                <check if="isset($_POST['seeking'])">
+
                 <div class="input-group" name="seeking">
 
+                    <check if="{{ @errors['seeking'] }}">
+                        <span class="err">{{ @errors['@seeking'] }}</span>
+                    </check>
+
                     <label>
-                        <input name="seeking" value="male" type="radio" aria-label="Radio button for following text input"> male</label>
+                        <input name="seeking" value="male" type="radio"
+                        <check if="{{ @seeking == male }}">
+                            checked="checked"
+                        </check>
+                        > male</label>
                     <label>
-                        <input name="seeking" value="female" type="radio" aria-label="Radio button for following text input"> female</label>
+                        <input name="seeking" value="female" type="radio"
+                        <check if="{{ @seeking == female }}">
+                            checked="checked"
+                        </check>
+                        > female</label>
                 </div>
                 </check>
             </div>
@@ -90,7 +102,6 @@
     </div>
 
 </form>
-</div>
 </div>
 <footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

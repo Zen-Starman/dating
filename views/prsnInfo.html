@@ -19,38 +19,46 @@
 
 <div class="container" id="columns">
     <div id="greeting">
-    <div action="profile" method="post" role="form">
-        <form action="profile" method="post" >
+    <div action="#" method="post" role="form">
+        <form action="#" method="post" >
         <div>Personal Information!</div>
         <div id="errormessage"></div>
 <!--First Name-->
          <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="text" value="{{ @f_name }}"
-                <check if="{{ @errors['food'] }}">
+                <check if="{{ @errors['f_name'] }}">
                     <span class="err">{{ @errors['f_name'] }}</span>
                 </check>
-                name="f_name" class="form-control" id="f_name" placeholder="First Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" value="{{ @f_name }}"
+                name="f_name" class="form-control" id="f_name" placeholder="First Name"
+                data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+                >
                 <div class="validation"></div>
             </div>
         </div>
 <!--Last Name-->
          <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="text" value="{{ @l_name }}"
-                <check if="{{ @errors['food'] }}">
+                <check if="{{ @errors['l_name'] }}">
                     <span class="err">{{ @errors['l_name'] }}</span>
                 </check>
-                name="l_name" class="form-control" id="l_name" placeholder="Last Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" value="{{ @l_name }}"
+                name="l_name" class="form-control" id="l_name" placeholder="Last Name"
+                data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+                >
                 <div class="validation"></div>
             </div>
         </div>
 <!--Age-->
         <div class="col-sm-12 mb-3">
             <div class="form-group">
-                <input type="number" value="{{ @age }}"  <check if="{{ @errors['food'] }}">
-                <span class="err">{{ @errors['age'] }}</span>
-            </check> name="age" class="form-control" id="age" placeholder="20" data-rule="minlen:4" data-msg="Please enter your age." />
+                <check if="{{ @errors['age'] }}">
+                    <span class="err">{{ @errors['age'] }}</span>
+                </check>
+                <input type="number" value="{{ @age }}"
+                data-rule="minlen:4" data-msg="Please enter your age."
+                name="age" class="form-control" id="age" placeholder="20"
+                >
                 <div class="validation"></div>
             </div>
         </div>
@@ -58,24 +66,36 @@
         <div class="col-sm-12 mb-3">
             <h3>Gender</h3>
             <br>
+
             <div class="input-group">
+
+                <check if="{{ @errors['gender'] }}">
+                    <span class="err">{{ @errors['@gender'] }}</span>
+                </check>
+
                 <label>
-                    <input name="gender" value="{{ @gender }}"
-                    <check if="{{ @errors['food'] }}">
-                        <span class="err">{{ @errors['gender'] }}</span>
+                    <input name="gender" value="male" type="radio"
+                    <check if="{{ @gender == male }}">
+                        checked="checked"
                     </check>
-                    type="radio" value="male" aria-label="Radio button for following text input"> male</label>
+                    > male</label>
                 <label>
-                    <input name="gender" value="{{ @gender }}"
-                    <check if="{{ @errors['food'] }}">
-                        <span class="err">{{ @errors['food'] }}</span>
+                    <input name="gender" value="female" type="radio"
+                    <check if="{{ @gender == female }}">
+                        checked="checked"
                     </check>
-                    type="radio" value="female" aria-label="Radio button for following text input"> female</label>
+                    > female</label>
             </div>
         </div>
             <div class="col-sm-12 mb-3">
                 <div class="form-group">
-                    <input type="tel" value="{{ @phone }}" class="form-control" name="phone" id="phone" placeholder="(xxx) xxx-xxxx" data-rule="minlen:4" data-msg="Please enter a 10 digit number" />
+                    <check if="{{ @errors['phone'] }}">
+                        <span class="err">{{ @errors['@phone'] }}</span>
+                    </check>
+                    <input type="tel" value="{{ @phone }}" class="form-control" name="phone"
+                           id="phone" placeholder="(000)000-0000" data-rule="minlen:4"
+                           data-msg="Please enter a 10 digit number"
+                    >
                     <div class="validation"></div>
                 </div>
             </div>
@@ -84,7 +104,7 @@
     </div>
 
     <div class="right">
-        <div  id="greeting" class="col-sm-6 mb-6">
+        <div  id="greeting" class="col-sm-10 mb-8">
             <div class="title-box-2 pt-4 pt-md-0">
                 <h5>
                     Privacy Policy
@@ -95,7 +115,7 @@
             </p>
         </div>
     </div>
-    <a href="profile"><button href="profile" type="submit" id="button-style" class="btn btn-primary btn-md">Next></button></a>
+    <button type="submit" id="button-style" class="btn btn-primary btn-md">Next></button>
 
     </form>
 </div>
